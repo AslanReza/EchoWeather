@@ -220,7 +220,7 @@ body {
 }
 
 .hourly-forecast:hover .weather-list {
-  scrollbar-color: #c5bcdb transparent;
+  scrollbar-color: #878fffc5 transparent;
 }
 
 .hourly-forecast .weather-item {
