@@ -239,3 +239,30 @@ body {
 .weather-icon {
   color: white;
 }
+
+.suggestions-list {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.742);
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 2;
+  outline: none;
+  list-style: none;
+  margin-top: 5px;
+  top: 52px;
+  font-size: 0.8rem;
+  scrollbar-width: thin;
+}
+
+.suggestion-item {
+  padding: 10px 48px;
+  cursor: pointer;
+  width: 100%;
+  background: #6565652c;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
