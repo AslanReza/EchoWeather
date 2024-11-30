@@ -1,68 +1,251 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sen", sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+#root {
+  width: 100%;
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
+  background: #ece9e6;
+  background: -webkit-linear-gradient(to top, #ffffff, #ece9e6);
+  background: linear-gradient(to top, #ffffff, #ece9e6);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
+.container {
+  margin: 0 auto;
+  max-width: 412px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background: #1c92d2;
+  background: -webkit-linear-gradient(
+    to bottom,
+    hsl(220, 100%, 81%),
+    rgb(34, 104, 255) #1c92d2
+  );
+  background: linear-gradient(
+    to bottom,
+    hsl(220, 100%, 81%),
+    rgb(34, 104, 255)
+  );
+  z-index: 1;
+  position: relative;
+  box-shadow: 0px 5px 10px #2d2d2d;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.container::after {
+  content: "";
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+  filter: grayscale(100%) opacity(0.5);
+  bottom: -100px;
+  transform: scale(1.1);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url("bg.png");
+  background-position: center;
+  background-size: contain;
+  animation: clouds 16s infinite;
+  background-repeat: no-repeat;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  border-radius: 8px;
+  right: 10px;
+  filter: grayscale(100%);
+  top: -80px;
+  transform: scale(1.4) rotate(180deg);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url("bg.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@keyframes clouds {
+  0% {
+    transform: scale(1.1);
+    left: 0px;
+    bottom: -80px;
   }
-  a:hover {
-    color: #747bff;
+  25% {
+    transform: scale(1.2);
+    left: -10px;
+    bottom: -80px;
   }
-  button {
-    background-color: #f9f9f9;
+  50% {
+    transform: scale(1.1);
+    left: 0px;
+    bottom: -80px;
   }
+  75% {
+    transform: scale(1.2);
+    left: 10px;
+    bottom: -80px;
+  }
+  100% {
+    transform: scale(1.1);
+    left: 0px;
+    bottom: -80px;
+  }
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+.search-section .search-form {
+  width: 100%;
+  height: 56px;
+  position: relative;
+}
+
+.search-section .search-form .icon-search {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.search-section .search-input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-radius: 6px;
+  background: #1c92d299;
+  padding: 0px 22px 0px 48px;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.search-section .search-input:focus {
+  border-color: #1c92d256;
+}
+
+.search-section .search-input::placeholder {
+  color: #ddd;
+  text-transform: none;
+}
+
+.search-section .location-button {
+  height: 56px;
+  width: 56px;
+  display: flex;
+  color: #fff;
+  flex-shrink: 0;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: #1c92d299;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-section .location-button:hover {
+  border-color: #1c92d299;
+  background: #1c92d256;
+}
+
+.location-icon {
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.location-icon:hover {
+  scale: 1.6;
+  color: #0015ff;
+}
+
+.weather-section :where(h2, p) {
+  color: #fff;
+}
+
+.weather-section .current-weather {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 22px 0px 48px;
+}
+
+.current-weather .weather-icon {
+  width: 140px;
+  aspect-ratio: 1;
+}
+
+.current-weather .temperature {
+  margin: 18px 0px;
+  font-size: 3.3rem;
+  display: flex;
+}
+
+.current-weather .description {
+  font-size: 1.2rem;
+}
+
+.current-weather .temperature span {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin: 6px 0 0 2px;
+}
+
+.hourly-forecast {
+  padding: 16px 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hourly-forecast .weather-list {
+  display: flex;
+  list-style: none;
+  gap: 38px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding-bottom: 16px;
+  margin-bottom: -16px;
+  scrollbar-color: transparent transparent;
+}
+
+.hourly-forecast:hover .weather-list {
+  scrollbar-color: #c5bcdb transparent;
+}
+
+.hourly-forecast .weather-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hourly-forecast .weather-item .weather-icon {
+  width: 28px;
+  aspect-ratio: 1;
+}
+
+.weather-icon {
+  color: white;
 }
