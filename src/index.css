@@ -58,7 +58,7 @@ body {
   background: url("bg.png");
   background-position: center;
   background-size: contain;
-  animation: clouds 16s infinite;
+  animation: clouds 8s ease-in-out infinite;
   background-repeat: no-repeat;
 }
 
@@ -68,7 +68,7 @@ body {
   border-radius: 8px;
   right: 10px;
   filter: grayscale(100%);
-  top: -80px;
+  top: -160px;
   transform: scale(1.4) rotate(180deg);
   z-index: -1;
   width: 100%;
@@ -81,29 +81,19 @@ body {
 
 @keyframes clouds {
   0% {
-    transform: scale(1.1);
-    left: 0px;
-    bottom: -80px;
+    transform: scale(1.1) translateX(0) translateY(0);
   }
   25% {
-    transform: scale(1.2);
-    left: -10px;
-    bottom: -80px;
+    transform: scale(1.12) translateX(5px) translateY(-3px);
   }
   50% {
-    transform: scale(1.1);
-    left: 0px;
-    bottom: -80px;
+    transform: scale(1.15) translateX(0) translateY(0);
   }
   75% {
-    transform: scale(1.2);
-    left: 10px;
-    bottom: -80px;
+    transform: scale(1.12) translateX(-5px) translateY(3px);
   }
   100% {
-    transform: scale(1.1);
-    left: 0px;
-    bottom: -80px;
+    transform: scale(1.1) translateX(0) translateY(0);
   }
 }
 
