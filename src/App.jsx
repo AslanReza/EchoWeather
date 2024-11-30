@@ -1,35 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { CiSearch } from "react-icons/ci";
+import { MdOutlineMyLocation } from "react-icons/md";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="container">
+      {/* Search Section */}
+      <div className="search-section">
+        <form action="#" className="search-form">
+          <CiSearch className="icon-search" />
+          <input
+            className="search-input"
+            type="search"
+            placeholder="Tell Me Your City Name"
+            required
+          />
+        </form>
+        <button className="location-button">
+          <MdOutlineMyLocation className="location-icon"/>
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      {/* Weather Section */}
+      <div className="weather-section">
+        <div className="current-weather">
+          <img className="weather-icon" width={50} src="icons/clouds.svg" />
+          <h2 className="temperature">
+            20 <span>°C</span>
+          </h2>
+          <p className="description">Partly Cloudy</p>
+        </div>
+        {/* Hourly Weather Forecast List */}
+        <div className="hourly-forecast">
+          <ul className="weather-list">
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="icons/clouds.svg" width={50} className="weather-icon" />
+              <p className="temperature">20°</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="icons/clouds.svg" width={50} className="weather-icon" />
+              <p className="temperature">20°</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="icons/clouds.svg" width={50} className="weather-icon" />
+              <p className="temperature">20°</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="icons/clouds.svg" width={50} className="weather-icon" />
+              <p className="temperature">20°</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="icons/clouds.svg" width={50} className="weather-icon" />
+              <p className="temperature">20°</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="icons/clouds.svg" width={50} className="weather-icon" />
+              <p className="temperature">20°</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default App
+export default App;
